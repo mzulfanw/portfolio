@@ -7,6 +7,7 @@ const josefinSans = Josefin_Sans({
   variable: '--josefinsans',
   weight: ['400', '700'],
   style: 'normal',
+  subsets: ['latin'],
 });
 
 export const metadata: Metadata = {
