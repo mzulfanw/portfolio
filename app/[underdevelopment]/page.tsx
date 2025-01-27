@@ -1,10 +1,6 @@
-type NextParamsType<T extends string> = {
-  [key in T]: string;
-};
+type tParams = Promise<{ underdevelopment: string }>;
 
-type UnderDevelopment = NextParamsType<'underdevelopment'>;
-
-export default async function About({ params }: { params: UnderDevelopment }) {
+export default async function About({ params }: { params: tParams }) {
   const { underdevelopment } = await params;
   return (
     <div className="p-4 text-center">
