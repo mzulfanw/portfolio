@@ -13,20 +13,37 @@ const josefinSans = Josefin_Sans({
 export const metadata: Metadata = {
   title: 'Muhammad Zulfan Wahyudin',
   description: 'Loved to code, design, and build things.',
-  keywords: ['software engineer', 'web developer', 'react', 'next.js'],
-  icons: [
-    {
-      rel: 'icon',
-      href: '/favicon.ico',
-      url: '/favicon.ico',
-    },
-    {
-      rel: 'apple-touch-icon',
-      href: '/apple-touch-icon.png',
-      sizes: '180x180',
-      url: '/apple-touch-icon.png',
-    },
+  keywords: [
+    'software engineer',
+    'web developer',
+    'react',
+    'next.js',
+    'open to work',
+    'open to freelance',
   ],
+  openGraph: {
+    url: 'https://mzulfanw.space',
+    type: 'website',
+    title: 'Muhammad Zulfan Wahyudin',
+    description: 'Loved to code, design, and build things.',
+    images: [
+      {
+        url: 'https://opengraph.b-cdn.net/production/images/4a613b4b-87c1-413f-980d-1287fa4ae31b.jpg?token=Np4WjOG5jKJgpSEW3_KW4QA_AGvn9jldrDNn1aEuI_I&height=1600&width=1200&expires=33273995396',
+        width: 1200,
+        height: 1600,
+        alt: 'OpenGraph Image for Muhammad Zulfan Wahyudin',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: 'https://mzulfanw.space',
+    title: 'Muhammad Zulfan Wahyudin',
+    description: 'Loved to code, design, and build things.',
+    images: [
+      'https://opengraph.b-cdn.net/production/images/4a613b4b-87c1-413f-980d-1287fa4ae31b.jpg?token=Np4WjOG5jKJgpSEW3_KW4QA_AGvn9jldrDNn1aEuI_I&height=1600&width=1200&expires=33273995396',
+    ],
+  },
 };
 
 export default function RootLayout({
