@@ -1,18 +1,12 @@
-'use client';
-
 import { components } from '@/configs';
 import Link from 'next/link';
-import { motion } from 'motion/react';
-import { usePathname } from 'next/navigation';
+import AnimatedPresence from '@/components/animated-presence';
 
 export default function About() {
-  const pathName = usePathname();
   return (
-    <section
-      className="flex w-full flex-col items-center justify-center"
-      key={pathName}
-    >
-      <motion.div
+    <section className="flex w-full flex-col items-center justify-center">
+      <AnimatedPresence
+        as="div"
         className="mb-12 flex w-full max-w-2xl flex-col"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -32,18 +26,20 @@ export default function About() {
           build scalable, maintainable, and visually compelling web
           applications.
         </p>
-      </motion.div>
-      <motion.div
+      </AnimatedPresence>
+      <AnimatedPresence
         className="mb-12 flex w-full max-w-2xl flex-col"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.2 }}
+        as="div"
       >
         <h1 className="text-4xl font-bold">Skills & Tech stack</h1>
         <div className="mt-6 grid grid-cols-3 gap-6 text-center">
           {components.skills.map(skill => (
-            <motion.div
+            <AnimatedPresence
+              as="div"
               key={skill.name}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -54,11 +50,12 @@ export default function About() {
                 <skill.Component className="h-14 w-14" />
                 <span className="mt-2 text-lg font-medium">{skill.name}</span>
               </Link>
-            </motion.div>
+            </AnimatedPresence>
           ))}
         </div>
-      </motion.div>
-      <motion.div
+      </AnimatedPresence>
+      <AnimatedPresence
+        as="div"
         className="flex w-full max-w-2xl flex-col"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -67,7 +64,8 @@ export default function About() {
       >
         <h1 className="text-4xl font-bold">Work Experience</h1>
         {components.work_experience.map((experience, index) => (
-          <motion.div
+          <AnimatedPresence
+            as="div"
             key={experience.company}
             className="mb-4 mt-6"
             initial={{ opacity: 0, y: 20 }}
@@ -92,9 +90,9 @@ export default function About() {
                 {experience.techStack.join(', ')}
               </p>
             )}
-          </motion.div>
+          </AnimatedPresence>
         ))}
-      </motion.div>
+      </AnimatedPresence>
     </section>
   );
 }

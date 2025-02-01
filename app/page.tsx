@@ -1,20 +1,16 @@
-'use client';
-
 import { components } from '@/configs';
 import Link from 'next/link';
-import { motion } from 'motion/react';
-import { usePathname } from 'next/navigation';
+import AnimatedPresence from '@/components/animated-presence';
 
 export default function Home() {
-  const pathName = usePathname();
   return (
-    <motion.section
+    <AnimatedPresence
+      as="section"
       className="flex w-full flex-col items-center justify-center"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
-      key={pathName}
     >
       <div className="flex w-full max-w-2xl flex-col text-left">
         <h1 className="text-4xl font-bold">Software Engineer.</h1>
@@ -41,6 +37,6 @@ export default function Home() {
           ))}
         </div>
       </div>
-    </motion.section>
+    </AnimatedPresence>
   );
 }

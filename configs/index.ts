@@ -15,9 +15,9 @@ const {
 export const components = {
   navbar: [
     { label: 'Home', href: '/' },
-    { label: 'About', href: 'about' },
-    { label: 'Projects', href: 'projects' },
-    { label: 'Blogs', href: 'blogs' },
+    { label: 'About', href: '/about' },
+    { label: 'Projects', href: '/projects' },
+    { label: 'Blogs', href: '/blogs' },
   ],
   social_media: [
     { name: 'Github', href: 'https://github.com/mzulfanw', Component: Github },
